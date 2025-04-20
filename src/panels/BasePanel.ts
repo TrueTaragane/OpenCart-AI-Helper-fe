@@ -3,6 +3,7 @@ import * as vscode from "vscode"
 export abstract class BasePanel {
   protected readonly _panel: vscode.WebviewPanel
   protected readonly _extensionUri: vscode.Uri
+  protected readonly _iconPath: vscode.Uri
   protected _disposables: vscode.Disposable[] = []
 
   public static currentPanel: BasePanel | undefined
@@ -15,6 +16,10 @@ export abstract class BasePanel {
   ) {
     this._panel = panel
     this._extensionUri = extensionUri
+    this._iconPath = vscode.Uri.joinPath(extensionUri, "resources", "rocket-icon-16.svg")
+
+    // Set the webview panel icon
+    this._panel.iconPath = this._iconPath
 
     // Set the webview's initial html content
     this._update()

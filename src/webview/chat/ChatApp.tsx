@@ -113,7 +113,24 @@ export const ChatApp: React.FC = () => {
     <div className="chat-container">
       <div className="chat-header">
         <div className="model-info">
-          <span className="model-icon"></span>
+          <div className="model-icon">
+            <svg
+              className="rocket-icon"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 11c-1 .84-1.33 3.33-1.33 3.33s2.49-.33 3.33-1.33c.47-.56.47-1.42-.06-1.94a1.45 1.45 0 0 0-1.94-.06z" />
+              <path d="m8 10-2-2a14.67 14.67 0 0 1 1.33-2.63A8.59 8.59 0 0 1 14.67 1.33c0 1.81-.52 5-4 7.33a14.9 14.9 0 0 1-2.67 1.34z" />
+              <circle cx="10.67" cy="5.33" r="1.33" />
+              <path d="M6 8 4 6" />
+              <path d="M8 6 6 4" />
+            </svg>
+          </div>
           <span className="model-name">{settings.defaultModel || "AI Model"}</span>
         </div>
         <div className="tabs">

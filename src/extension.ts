@@ -8,8 +8,16 @@ import { SettingsPanel } from "./panels/SettingsPanel"
 import { SidebarProvider } from "./providers/SidebarProvider"
 import { OpenCartAiHelperViewProvider } from "./providers/OpenCartAiHelperViewProvider"
 
+// Helper function to get the rocket icon URI
+function getRocketIconUri(extensionUri: vscode.Uri): vscode.Uri {
+  return vscode.Uri.joinPath(extensionUri, "resources", "rocket-icon-16.svg")
+}
+
 export function activate(context: vscode.ExtensionContext) {
   console.log("OpenCart AI Helper is now active!")
+
+  // Make the rocket icon available to all panels
+  const rocketIconUri = getRocketIconUri(context.extensionUri)
 
   // Register the sidebar view provider
   const sidebarProvider = new SidebarProvider(context.extensionUri)

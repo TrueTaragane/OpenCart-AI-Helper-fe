@@ -43,6 +43,7 @@ export class ChatPanel extends BasePanel {
     const scriptUri = this.getScriptUri(webview, "dist", "chat.js")
     const styleUri = this.getStyleUri(webview, "media", "chat.css")
     const codiconsUri = this.getStyleUri(webview, "media", "codicon.css")
+    const iconUri = webview.asWebviewUri(this._iconPath)
 
     // Use a nonce to only allow specific scripts to be run
     const nonce = getNonce()
@@ -52,9 +53,10 @@ export class ChatPanel extends BasePanel {
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}'; connect-src https://*.openai.com https://*.googleapis.com http://localhost:* https://*.openrouter.ai;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}'; connect-src https://*.openai.com https://*.googleapis.com http://localhost:* https://*.openrouter.ai; img-src ${webview.cspSource};">
         <link href="${styleUri}" rel="stylesheet">
         <link href="${codiconsUri}" rel="stylesheet">
+        <link rel="icon" href="${iconUri}" type="image/svg+xml">
         <title>OpenCart AI Chat</title>
       </head>
       <body>

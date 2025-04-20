@@ -32,6 +32,14 @@ body {
   border-bottom: 1px solid var(--vscode-panel-border);
 }
 
+.rocket-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
 .model-info {
   display: flex;
   align-items: center;
@@ -43,6 +51,15 @@ body {
   height: 16px;
   background-color: var(--vscode-activityBarBadge-background);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-icon svg {
+  width: 12px;
+  height: 12px;
+  color: var(--vscode-activityBarBadge-foreground);
 }
 
 .model-name {
